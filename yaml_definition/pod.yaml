@@ -59,12 +59,25 @@ spec:
           # this is the name of the volumes to find the what this volumes is
           name: data-volume
 
+      # container-level securityContext, this overrides pod-level securityContext
+      securityContext:
+        # user with this id will be running this pod
+        runAsUser: 1000
+        # capabilities is ONLY used in container level
+        capabilities:
+          add: ["SYS_TIME"]
+
   volumes:
     - name: data-volume
       hostPath:
         # any data created in this volumn is stored in the hosting node's /data directory
         path: /data
         type: Directory
+
+  # pod-level securityContext
+  securityContext:
+    # user with this id will be running this pod
+    runAsUser: 1000
 
 ---
 # LimitRange defines, in the same namespace, default resource requst/limit for each container or pod

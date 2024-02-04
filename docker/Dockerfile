@@ -1,7 +1,7 @@
 # base image
 FROM node:latest
 
-# use specific user when running the image
+# use specific user id when running the image
 # by default, image is run by root (with limited permission as roor in the host node)
 USER 1000
 
