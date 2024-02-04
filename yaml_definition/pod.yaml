@@ -1,0 +1,103 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: pod-test
+
+  labels:
+    app: alpine
+    tier: free
+
+  annotations:
+    example.com/icon-url: "https://example.com/icon.png"
+
+spec:
+  # pick a particular scheduler
+  schedulerName: my-scheduler
+
+  # Run only once, When a pod is first created,
+  # the process in the initContainer must run to a completion before the real container hosting the application starts.
+  # for multiple initContainers, each is run one at a time in sequential order,
+  # if any of the initContainers fail to complete, Kubernetes restarts the Pod repeatedly until the Init Container succeeds.
+  initContainers:
+    - name: init-myservice
+      image: busybox
+      command: ["echo", "initial service; done;"]
+
+  containers:
+    - name: alpine
+      image: alpine
+
+      # command overrides ENTRYPOINT in Dockerfile
+      command: ["/bin/sh", "-c"]
+      # args overrides CMD in Dockerfile
+      args: ["echo 'test' > /data/message.txt"]
+
+      # set enviroment variables, or using configMap
+      env:
+        - name: TIME_ZONE_1
+          value: GMT+1
+        - name: TIME_ZONE_2
+          value: GMT+2
+
+      # Resources are requested per container, not per Pod.
+      # The total resources requested by the Pod is the sum of all resources requested by all containers in the Pod
+      resources:
+        # minimum amount of a resource required,
+        # if requests not specfieid, but limits specified, requests is set as limits
+        requests:
+          cpu: 500m
+          memory: 128Mi
+        # maximal amount of a resource required
+        limits:
+          cpu: 1000m
+          memory: 256Mi # a container can use more memory than its limit, the pod could be terminiated if the node run out of memory
+
+      # container mounts a volumn to a directory inside container
+      volumeMounts:
+        - mountPath: /data
+          # this is the name of the volumes to find the what this volumes is
+          name: data-volume
+
+  volumes:
+    - name: data-volume
+      hostPath:
+        # any data created in this volumn is stored in the hosting node's /data directory
+        path: /data
+        type: Directory
+
+---
+# LimitRange defines, in the same namespace, default resource requst/limit for each container or pod
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: example-limitrange
+spec:
+  limits:
+    - default: # default limit
+        cpu: "700m"
+        memory: 512Mi
+      defaultRequest: # default request
+        cpu: "500m"
+        memory: 256Mi
+      max:
+        cpu: "1"
+        memory: 512Mi
+      min:
+        cpu: "300m"
+        memory: 128Mi
+      type: Container # could be a pod
+
+---
+# ResourceQuota creates, in the same namespace, hard limit for TOTAL resource requests/limits
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: example-resource-quota
+spec:
+  hard:
+    pods: "10" # Maximum number of pods in the namespace
+    requests.cpu: "2" # Maximum total CPU requests
+    requests.memory: 4Gi # Maximum total memory requests
+    limits.cpu: "4" # Maximum total CPU limits
+    limits.memory: 8Gi # Maximum total memory limits

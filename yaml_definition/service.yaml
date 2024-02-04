@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: clusterip-service
+
+spec:
+  type: ClusterIP
+
+  # use selector to bind pods with this service
+  selector:
+    app: my-app
+
+  ports:
+    - protocol: TCP
+      # The port on which the service listens inside the cluste
+      port: 80
+      #  The port on the pod to which the service will forward the traffic
+      targetPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+
+metadata:
+  name: nodeport-service
+  namespace: default
+
+spec:
+  # map a port on the node to a port on a pod
+  type: NodePort
+
+  selector:
+    app: my-app
+
+  ports:
+    # The port on which the service is exposed on each node of the cluster
+    - nodePort: 30080
+      # The port on which the service listens inside the cluster
+      port: 80
+      # The port on the pod to which the service will forward the traffic
+      targetPort: 8080
