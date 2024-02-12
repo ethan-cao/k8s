@@ -1,10 +1,10 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="8-w-KmkihSFErgzN6IgH">
-        <mxGraphModel dx="3975" dy="3836" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+        <mxGraphModel dx="4301" dy="3836" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="HkXYN7S-SkDWoMHPotK2-20" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=10;fillColor=none;" parent="1" vertex="1">
+                <mxCell id="HkXYN7S-SkDWoMHPotK2-20" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=6;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="-1347" y="-1923" width="3095.83" height="3694" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;fillColor=none;" vertex="1" parent="1">
@@ -519,8 +519,8 @@
                 <mxCell id="109" style="edgeStyle=none;html=1;fontSize=18;" edge="1" parent="1" source="QIc9ZCwkGWyD9zUUvi-c-1" target="107">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="QIc9ZCwkGWyD9zUUvi-c-1" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Cloud control Manager&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="1185.0688235294117" y="-17.997368421052528" width="173.92941176470592" height="72.47368421052632" as="geometry"/>
+                <mxCell id="QIc9ZCwkGWyD9zUUvi-c-1" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Cloud controller Manager&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="1168" y="-18" width="191" height="72.47" as="geometry"/>
                 </mxCell>
                 <mxCell id="zwojADeGNBSf5wub3Yg0-4" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Node Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="1017" y="-315" width="98" height="42" as="geometry"/>
@@ -542,6 +542,12 @@
                 </mxCell>
                 <mxCell id="114" value="CA:&amp;nbsp;/etc/kubernetes/pki/&amp;nbsp;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.certificate_manager_2;rounded=1;strokeWidth=1;" vertex="1" parent="1">
                     <mxGeometry x="1115" y="146" width="74.75" height="69" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Endpoint Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1238" y="-315" width="98" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Job Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="1238" y="-256" width="98" height="42" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
