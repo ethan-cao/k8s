@@ -15,7 +15,9 @@ RUN mkdir -p /home/app
 
 COPY ./hello.js /home/app
 
-#  set the username or UID (and optionally, the group name or GID) for the container process that will be run by the ENTRYPOINT and/or CMD
+# sets the user to use when running the image and for any RUN, CMD, and ENTRYPOINT instructions that 
+# !!!! FOLLOW IT !!!!
+# any RUN CMD ENTRYPOINT before USER, is run as root
 USER daemon
 
 # When a container starts, the executable specified by the ENTRYPOINT is run,
