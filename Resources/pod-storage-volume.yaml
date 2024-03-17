@@ -15,8 +15,11 @@ spec:
         - -c
         - echo "test" > /mnt/volume/test.txt
       volumeMounts:
+        # mounts the volume test-volume to the path /mnt/volume inside the container.
         - mountPath: /mnt/volume
           name: test-volume
   volumes:
     - name: test-volume
-      emptyDir: {}
+      hostPath:
+        # directory location on host
+        path: /var/log

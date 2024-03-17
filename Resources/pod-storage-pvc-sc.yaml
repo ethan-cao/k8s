@@ -13,7 +13,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: my-pvc-1
 spec:
-  # dynamically provison pv by sc
+  # dynamically provison PV by SC
   storageClassName: my-sc
   accessModes:
     - ReadWriteOnce
@@ -35,6 +35,9 @@ spec:
         limits:
           memory: "128Mi"
           cpu: "500m"
+      volumeMounts:
+        - mountPath: "/tmp/log"
+          name: my-volume
   volumes:
     - name: my-volume
       persistentVolumeClaim:

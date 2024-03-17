@@ -6,7 +6,6 @@ spec:
   # how the volume should be mounted in the host
   accessModes:
     - ReadWriteOnce
-
   # storage size
   capacity:
     storage: 100Mi
@@ -16,6 +15,7 @@ spec:
     path: /mnt/data
 ---
 apiVersion: v1
+# The PVC will automatically bind to the available PV if PV's specifications match the PVC requirements (like size, access modes)
 kind: PersistentVolumeClaim
 metadata:
   name: my-pvc-1
@@ -23,27 +23,29 @@ spec:
   accessModes:
     - ReadWriteOnce
   resources:
-    # This file claims the storage defined in the PersistentVolume.
-    # The claim size must not exceed the size of the PV.
-    #  The PVC will bind to the available PV if its specifications match the PVC requirements (like size and access modes)
     requests:
+      # this PVC requests for at least 99 Mibibytes storage, the actual storage depends on the bound PV
       storage: 99Mi
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: simple-pod
+  name: pod-1
   labels:
     name: myapp
 spec:
   containers:
-    - name: simple-pod
+    - name: pod-1
       image: busybox
       resources:
         limits:
           memory: "128Mi"
           cpu: "500m"
+      volumeMounts:
+        # mounts the volume test-volume to the path /mnt/volume inside the container.
+        - mountPath: /mnt/volume
+          name: my-volume-1
   volumes:
-    - name: my-volume
+    - name: my-volume-1
       persistentVolumeClaim:
         claimName: my-pvc-1
