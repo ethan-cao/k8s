@@ -1,11 +1,26 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="8-w-KmkihSFErgzN6IgH">
-        <mxGraphModel dx="6203" dy="4168" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
+        <mxGraphModel dx="5329" dy="3389" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="1" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="HkXYN7S-SkDWoMHPotK2-20" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=6;fillColor=none;" parent="1" vertex="1">
-                    <mxGeometry x="-2414" y="-2063" width="4543" height="4295" as="geometry"/>
+                <mxCell id="156" value="" style="rounded=1;whiteSpace=wrap;html=1;container=0;fillColor=none;" vertex="1" parent="1">
+                    <mxGeometry y="321" width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="160" value="" style="group;strokeColor=none;fillColor=none;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="81" y="383" width="185" height="163" as="geometry"/>
+                </mxCell>
+                <mxCell id="161" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="160">
+                    <mxGeometry width="184.99999999999997" height="155.23809523809524" as="geometry"/>
+                </mxCell>
+                <mxCell id="162" value="" style="group" vertex="1" connectable="0" parent="160">
+                    <mxGeometry width="184.99999999999997" height="163" as="geometry"/>
+                </mxCell>
+                <mxCell id="164" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Pod&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="162">
+                    <mxGeometry x="49.8076923076923" y="116.4285714285714" width="85.38461538461539" height="46.57142857142856" as="geometry"/>
+                </mxCell>
+                <mxCell id="HkXYN7S-SkDWoMHPotK2-20" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=6;fillColor=none;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="-2602" y="-2278" width="4543" height="4295" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" value="" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=12 12;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="-1298" y="2491" width="139" height="472" as="geometry"/>
@@ -25,8 +40,8 @@
                 <mxCell id="zpeIMGb1AkxCZGoKdPOM-107" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" parent="1" vertex="1">
                     <mxGeometry x="941" y="2686" width="300" height="470" as="geometry"/>
                 </mxCell>
-                <mxCell id="51YhVwraCw5KAQs0cLn3-45" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Control Panel (Master Node):&lt;/b&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;A special kind node running process to manage the reset of nodes (cluster) there is usually a replicate.&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;Developer only interacts with Master node, and control the worker node from Master node&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;recommended to use multiple nodes as master for high availability and fault tolerance.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Kube API Server&lt;/b&gt;:&amp;nbsp;&lt;/font&gt;expose k8s API to let user&amp;nbsp;query and manipulate the state of API objects&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;Authentication, Authorization, Admission&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;Manifest:&amp;nbsp;etc/kubernetes/manifests/kube-apiserver.yaml&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;Controller Manager&lt;/b&gt;:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;includes a collection of &lt;b&gt;controllers &lt;/b&gt;that manages build-in k8s resource. Each controller is not aware of other controllers.&lt;br&gt;controller that is responsible for signing certificate,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;the root CA certificate and key is set in /etc/kubernetes/manifests/kube-controller-manager.yaml&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;b&gt;Root CA&lt;/b&gt;:&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;the Root CA Certificate and key in located in control panel's file system at&amp;nbsp;/etc/kubernetes/pki/&lt;/div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;Scheduler&lt;/b&gt;: Decides which pod runs on which node, deployed as pod in namespace kube-system&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;etcd&lt;/b&gt;: distributed key-value storage/database about container info (&lt;b&gt;kubectl get&lt;/b&gt; takes results from etcd)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;etcd only commmunicates with Kube API Server&lt;br&gt;Manifest:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;/etc/kubernetes/manifests/etcd.yaml&lt;/span&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
-                    <mxGeometry x="667" y="-862" width="977" height="482" as="geometry"/>
+                <mxCell id="51YhVwraCw5KAQs0cLn3-45" value="&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Control Panel (Master Node):&lt;/b&gt;&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;A special kind node running process to manage the reset of nodes (cluster) there is usually a replicate.&amp;nbsp;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;Developer only interacts with Master node, and control the worker node from Master node&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;recommended to use multiple nodes as master for high availability and fault tolerance.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Kube API Server&lt;/b&gt;:&amp;nbsp;&lt;/font&gt;expose k8s API to let user&amp;nbsp;query and manipulate the state of API objects&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;Authentication, Authorization, Admission&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;In High Availablility(HA) context, multiple API server runs in parallel in mumtiple control panel&lt;/font&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;Manifest:&amp;nbsp;etc/kubernetes/manifests/kube-apiserver.yaml&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;Controller Manager&lt;/b&gt;:&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;includes a collection of &lt;b&gt;controllers &lt;/b&gt;that manages build-in k8s resource. Each controller is not aware of other controllers.&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;In High Availablility(HA) context, only 1 Controller Manager run as the active one, while the rest are in standby mode&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;controller that is responsible for signing certificate,&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;the root CA certificate and key is set in /etc/kubernetes/manifests/kube-controller-manager.yaml&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;b&gt;Scheduler&lt;/b&gt;: Decides which pod runs on which node, deployed as pod in namespace kube-system&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;In High Availablility(HA) context, only 1 Scheduler run as the active one, while the rest are in standby mode&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;text-align: left;&quot;&gt;Manifest:&amp;nbsp;etc/kubernetes/manifests/kube-scheduler.yaml&lt;/span&gt;&lt;span style=&quot;text-align: left;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;text-align: justify; font-size: 15px;&quot;&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;&lt;br class=&quot;Apple-interchange-newline&quot;&gt;Root CA&lt;/b&gt;:&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;the Root CA Certificate and key in located in control panel's file system at&amp;nbsp;/etc/kubernetes/pki/&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+                    <mxGeometry x="671" y="-914.5" width="977" height="560" as="geometry"/>
                 </mxCell>
                 <mxCell id="51YhVwraCw5KAQs0cLn3-61" value="&lt;div style=&quot;&quot;&gt;&lt;p style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Worker Node:&lt;/b&gt;&amp;nbsp;is either a virtual / physical server&lt;strong&gt;&lt;br&gt;&lt;/strong&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 15px;&quot;&gt;&lt;strong&gt;kubelet:&lt;/strong&gt;&amp;nbsp;acts as node manager,&amp;nbsp;managing/maintaining containers on that node, create/delete pod&lt;br&gt;keeps pulling from API server in master node to watch changes and check there is any job assigned to it&amp;nbsp;&lt;br&gt;configure file is /var/lib/kubelet/config.yaml&lt;/p&gt;&lt;p style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 15px;&quot;&gt;&lt;strong&gt;kube-proxy:&lt;/strong&gt;&amp;nbsp;deployed as &lt;b&gt;pod&lt;/b&gt; by &lt;b&gt;daemonSet&lt;/b&gt;, maintains network rules, allow network communication to pod form inside/outside the cluster. it maintains iptables,&amp;nbsp; looks for new service, communicates with&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;API server in master node to watch changes&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;font-size: 15px;&quot;&gt;&lt;strong&gt;Pod&lt;/strong&gt;:&lt;/p&gt;&lt;ul style=&quot;&quot;&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;single instance of an application&lt;/li&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;Pods are ephemeral. They come and go at any time&amp;nbsp;&amp;nbsp;&lt;/li&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;the smallest deployable unit, scaling creates new pod, but application is hosted in container&amp;nbsp;&lt;/li&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;pod can have &lt;strong&gt;multiple container&lt;/strong&gt; with shared storage and network within it&lt;/li&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;pods are created and managed by control plane&lt;/li&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;pod name should be unique within the same namespace&lt;/li&gt;&lt;li style=&quot;font-size: 15px;&quot;&gt;typically all containers would have the same access level, network segmentation, and identity&lt;/li&gt;&lt;/ul&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;background-color: initial;&quot;&gt;Container runtime Interface&lt;/b&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;:&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;API used to enable integration between the kubele and various container runtimes, e.g., Docker.&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&amp;nbsp;.&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;br&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;font style=&quot;&quot;&gt;&lt;div style=&quot;&quot; title=&quot;Page 32&quot; class=&quot;page&quot;&gt;&lt;span style=&quot;font-size: 15px; background-color: initial;&quot;&gt;All&amp;nbsp;&lt;b&gt;containers&lt;/b&gt; in a &lt;/span&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Pod share the same IP address, hostname and port range, and are deployed and scaled together, can also share filesystem.&amp;nbsp;&lt;/span&gt;&lt;font style=&quot;&quot;&gt;However, applications in different Pods are isolated from each other; they have different IP addresses, hostnames, and more&lt;/font&gt;&lt;/font&gt;&lt;div style=&quot;font-size: 15px;&quot; class=&quot;layoutArea&quot;&gt;&lt;div class=&quot;column&quot;&gt;&lt;br&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;&quot;&gt;&amp;nbsp; &amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="-1386" y="679.56" width="920" height="560" as="geometry"/>
@@ -215,7 +230,7 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="yhe-K0FvdLwK_NKu4FFe-114" value="&lt;b style=&quot;border-color: var(--border-color); font-size: 18px;&quot;&gt;Cluster&lt;/b&gt;:&amp;nbsp;&amp;nbsp;&amp;nbsp;a cluster refers to a group of nodes that work together to run containerized applications" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" parent="1" vertex="1">
-                    <mxGeometry x="-548" y="2169" width="910" height="30" as="geometry"/>
+                    <mxGeometry x="-729.27" y="1969" width="910" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="yhe-K0FvdLwK_NKu4FFe-145" value="Persistent Volume 1" style="sketch=0;html=1;dashed=0;whitespace=wrap;fillColor=#2875E2;strokeColor=#ffffff;points=[[0.005,0.63,0],[0.1,0.2,0],[0.9,0.2,0],[0.5,0,0],[0.995,0.63,0],[0.72,0.99,0],[0.5,1,0],[0.28,0.99,0]];verticalLabelPosition=bottom;align=center;verticalAlign=top;shape=mxgraph.kubernetes.icon;prIcon=pv" parent="1" vertex="1">
                     <mxGeometry x="-963.64" y="-619" width="156.5" height="140.16" as="geometry"/>
@@ -468,7 +483,7 @@
                     <mxGeometry width="86" height="86" as="geometry"/>
                 </mxCell>
                 <mxCell id="107" value="" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=1;strokeWidth=1;fontSize=18;fillColor=default;" parent="1" vertex="1">
-                    <mxGeometry x="2357" y="-304.26" width="951" height="645" as="geometry"/>
+                    <mxGeometry x="2407" y="-724" width="951" height="645" as="geometry"/>
                 </mxCell>
                 <mxCell id="125" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Container Network Interface&lt;br&gt;CNI&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;container=0;fillColor=#66B2FF;" parent="1" vertex="1">
                     <mxGeometry x="-1975.9999215043783" y="153.55823529411765" width="266.5350706460596" height="49.82352941176471" as="geometry"/>
@@ -480,19 +495,16 @@
                     <mxGeometry x="138" y="418" width="69" height="72" as="geometry"/>
                 </mxCell>
                 <mxCell id="130" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="640" y="-304.26" width="1042" height="631.651146815037" as="geometry"/>
+                    <mxGeometry x="642" y="-288.35" width="1056" height="637.26" as="geometry"/>
                 </mxCell>
                 <mxCell id="zpeIMGb1AkxCZGoKdPOM-101" value="" style="group;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;rounded=1;container=0;" parent="130" vertex="1" connectable="0">
-                    <mxGeometry width="1042" height="629" as="geometry"/>
+                    <mxGeometry x="14" y="8.259999999999991" width="1042" height="629" as="geometry"/>
                 </mxCell>
                 <mxCell id="51YhVwraCw5KAQs0cLn3-6" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Control Panel 1&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="130" vertex="1">
                     <mxGeometry x="348.9966698075111" y="595.4143047097739" width="347.85882352941184" height="36.23684210526316" as="geometry"/>
                 </mxCell>
-                <mxCell id="51YhVwraCw5KAQs0cLn3-9" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;" parent="130" vertex="1">
-                    <mxGeometry x="602" y="25" width="368" height="270.76" as="geometry"/>
-                </mxCell>
                 <mxCell id="51YhVwraCw5KAQs0cLn3-10" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Scheduler&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="269.99882352941177" y="487.25894736842105" width="173.92941176470592" height="72.47368421052632" as="geometry"/>
+                    <mxGeometry x="296.99882352941177" y="391.25894736842105" width="173.92941176470592" height="72.47368421052632" as="geometry"/>
                 </mxCell>
                 <mxCell id="51YhVwraCw5KAQs0cLn3-11" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Kube API Server&lt;br&gt;listening on port 6443&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
                     <mxGeometry x="53.00395084923889" y="333.0014241872476" width="173.92941176470592" height="72.47368421052632" as="geometry"/>
@@ -510,43 +522,46 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="QIc9ZCwkGWyD9zUUvi-c-1" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Cloud controller Manager&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="808" y="394.53" width="191" height="72.47" as="geometry"/>
-                </mxCell>
-                <mxCell id="zwojADeGNBSf5wub3Yg0-4" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Node Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="628" y="41" width="98" height="42" as="geometry"/>
+                    <mxGeometry x="779" y="385.26" width="191" height="72.47" as="geometry"/>
                 </mxCell>
                 <mxCell id="zwojADeGNBSf5wub3Yg0-3" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Controller Manager&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="130" vertex="1">
                     <mxGeometry x="562" y="266" width="267" height="28" as="geometry"/>
                 </mxCell>
-                <mxCell id="106" value="etcd" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;rounded=1;fontSize=18;fillColor=default;" parent="130" vertex="1">
-                    <mxGeometry x="324" y="321.24" width="103" height="96" as="geometry"/>
-                </mxCell>
-                <mxCell id="112" style="edgeStyle=none;html=1;fontSize=18;" parent="130" source="51YhVwraCw5KAQs0cLn3-11" target="106" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="110" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Service Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="737" y="41" width="98" height="42" as="geometry"/>
-                </mxCell>
-                <mxCell id="111" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Service Account and Token Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="628" y="100" width="184" height="42" as="geometry"/>
-                </mxCell>
                 <mxCell id="114" value="CA:&amp;nbsp;/etc/kubernetes/pki/&amp;nbsp;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#BF0816;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.certificate_manager_2;rounded=1;strokeWidth=1;" parent="130" vertex="1">
-                    <mxGeometry x="726" y="502" width="74.75" height="69" as="geometry"/>
+                    <mxGeometry x="572" y="391.26" width="74.75" height="69" as="geometry"/>
                 </mxCell>
-                <mxCell id="118" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Endpoint Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="849" y="41" width="98" height="42" as="geometry"/>
+                <mxCell id="194" value="" style="group" vertex="1" connectable="0" parent="130">
+                    <mxGeometry x="602" y="25" width="368" height="270.76" as="geometry"/>
                 </mxCell>
-                <mxCell id="119" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Job Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="130" vertex="1">
-                    <mxGeometry x="849" y="100" width="98" height="42" as="geometry"/>
+                <mxCell id="51YhVwraCw5KAQs0cLn3-9" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=default;" parent="194" vertex="1">
+                    <mxGeometry width="368" height="270.76" as="geometry"/>
                 </mxCell>
-                <mxCell id="155" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;Relication Contoller&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="130">
-                    <mxGeometry x="632" y="156.26" width="184" height="42" as="geometry"/>
+                <mxCell id="zwojADeGNBSf5wub3Yg0-4" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Node Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="194" vertex="1">
+                    <mxGeometry x="26" y="16" width="98" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="110" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Service Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="194" vertex="1">
+                    <mxGeometry x="135" y="16" width="98" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="111" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Service Account and Token Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="194" vertex="1">
+                    <mxGeometry x="26" y="75" width="184" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="118" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Endpoint Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="194" vertex="1">
+                    <mxGeometry x="247" y="16" width="98" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="119" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Job Controller&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="194" vertex="1">
+                    <mxGeometry x="247" y="75" width="98" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="155" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;Relication Contoller&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="194">
+                    <mxGeometry x="30" y="131.26" width="184" height="42" as="geometry"/>
                 </mxCell>
                 <mxCell id="120" value="" style="group;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;rounded=1;container=0;" parent="1" vertex="1" connectable="0">
                     <mxGeometry x="654" y="581" width="479" height="389" as="geometry"/>
                 </mxCell>
                 <mxCell id="123" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Control Panel 2&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
                     <mxGeometry x="731.9966698075111" y="933.7643047097739" width="347.85882352941184" height="36.23684210526316" as="geometry"/>
+                </mxCell>
+                <mxCell id="205" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="128" target="200">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="128" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Kube API Server&lt;br&gt;listening on port 6443&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
                     <mxGeometry x="692.0039508492389" y="742.1814241872476" width="173.92941176470592" height="72.47368421052632" as="geometry"/>
@@ -563,23 +578,80 @@
                 <mxCell id="109" style="edgeStyle=none;html=1;fontSize=18;" parent="1" source="QIc9ZCwkGWyD9zUUvi-c-1" target="107" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="156" value="" style="rounded=1;whiteSpace=wrap;html=1;container=0;fillColor=none;" vertex="1" parent="1">
-                    <mxGeometry y="321" width="347.5" height="285" as="geometry"/>
-                </mxCell>
                 <mxCell id="159" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Worker Node&amp;nbsp;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="1">
                     <mxGeometry x="59.03588173896674" y="581.0023529411766" width="236.92006279649743" height="27.176470588235297" as="geometry"/>
                 </mxCell>
-                <mxCell id="160" value="" style="group;strokeColor=none;fillColor=none;" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="81" y="383" width="185" height="163" as="geometry"/>
+                <mxCell id="167" value="" style="group;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;rounded=1;container=0;" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="654" y="1234" width="479" height="389" as="geometry"/>
                 </mxCell>
-                <mxCell id="161" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="160">
-                    <mxGeometry width="184.99999999999997" height="155.23809523809524" as="geometry"/>
+                <mxCell id="168" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Control Panel 3&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="731.9966698075111" y="1586.764304709774" width="347.85882352941184" height="36.23684210526316" as="geometry"/>
                 </mxCell>
-                <mxCell id="162" value="" style="group" vertex="1" connectable="0" parent="160">
-                    <mxGeometry width="184.99999999999997" height="163" as="geometry"/>
+                <mxCell id="204" style="edgeStyle=orthogonalEdgeStyle;html=1;" edge="1" parent="1" source="169" target="200">
+                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="164" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Pod&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="162">
-                    <mxGeometry x="49.8076923076923" y="116.4285714285714" width="85.38461538461539" height="46.57142857142856" as="geometry"/>
+                <mxCell id="169" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;Kube API Server&lt;br&gt;listening on port 6443&lt;br&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="692.0039508492389" y="1395.1814241872476" width="173.92941176470592" height="72.47368421052632" as="geometry"/>
+                </mxCell>
+                <mxCell id="170" style="edgeStyle=orthogonalEdgeStyle;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="127" target="169">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="199" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="2441" y="852" width="350.5" height="995" as="geometry"/>
+                </mxCell>
+                <mxCell id="185" value="" style="group" vertex="1" connectable="0" parent="199">
+                    <mxGeometry width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="171" value="" style="rounded=1;whiteSpace=wrap;html=1;container=0;fillColor=none;" vertex="1" parent="185">
+                    <mxGeometry width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="172" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;etcd Server (Leader)&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="185">
+                    <mxGeometry x="62.99588173896677" y="254.3423529411766" width="236.92006279649743" height="27.176470588235297" as="geometry"/>
+                </mxCell>
+                <mxCell id="173" value="etcd" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;rounded=1;fontSize=18;fillColor=default;" vertex="1" parent="185">
+                    <mxGeometry x="122.25" y="78.5200000000001" width="103" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="186" value="" style="group" vertex="1" connectable="0" parent="199">
+                    <mxGeometry y="364" width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="187" value="" style="rounded=1;whiteSpace=wrap;html=1;container=0;fillColor=none;" vertex="1" parent="186">
+                    <mxGeometry width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="188" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;etcd Server (Follower)&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="186">
+                    <mxGeometry x="62.99588173896677" y="254.3423529411766" width="236.92006279649743" height="27.176470588235297" as="geometry"/>
+                </mxCell>
+                <mxCell id="189" value="etcd" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;rounded=1;fontSize=18;fillColor=default;" vertex="1" parent="186">
+                    <mxGeometry x="122.25" y="78.5200000000001" width="103" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="190" value="" style="group" vertex="1" connectable="0" parent="199">
+                    <mxGeometry x="3" y="710" width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="191" value="" style="rounded=1;whiteSpace=wrap;html=1;container=0;fillColor=none;" vertex="1" parent="190">
+                    <mxGeometry width="347.5" height="285" as="geometry"/>
+                </mxCell>
+                <mxCell id="192" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;etcd Server (Follower)&lt;/span&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;container=0;" vertex="1" parent="190">
+                    <mxGeometry x="62.99588173896677" y="254.3423529411766" width="236.92006279649743" height="27.176470588235297" as="geometry"/>
+                </mxCell>
+                <mxCell id="193" value="etcd" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;rounded=1;fontSize=18;fillColor=default;" vertex="1" parent="190">
+                    <mxGeometry x="122.25" y="78.5200000000001" width="103" height="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="200" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;strokeWidth=6;fillColor=none;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="2257" y="722" width="728" height="1295" as="geometry"/>
+                </mxCell>
+                <mxCell id="201" value="&lt;b&gt;etcd Cluster&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
+                    <mxGeometry x="2514" y="1980" width="250" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="202" value="&lt;div style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;etcd&lt;/b&gt;: distributed key-value storage/database about container info (&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;kubectl get&lt;/b&gt;&lt;span&gt;&amp;nbsp;&lt;/span&gt;takes results from etcd)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;It can live in master node, or in a separate etcd cluster (more resilient)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); text-align: left;&quot;&gt;In High Availablility(HA) context, only 1etcd Server run as the leader (Read/Write), while the rest are followers (Read)&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;border-color: var(--border-color); color: rgb(0, 0, 0); font-family: Helvetica; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(251, 251, 251); text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; font-size: 15px;&quot;&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;etcd only commmunicates with Kube API Server&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;Manifest:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;border-color: var(--border-color); background-color: initial;&quot;&gt;/etc/kubernetes/manifests/etcd.yaml&lt;/span&gt;&lt;/div&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="2255" y="538" width="857" height="148" as="geometry"/>
+                </mxCell>
+                <mxCell id="206" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;shadow=0;endSize=26;" edge="1" parent="1" source="51YhVwraCw5KAQs0cLn3-11" target="200">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="782" y="464"/>
+                            <mxPoint x="1563" y="464"/>
+                            <mxPoint x="1563" y="1370"/>
+                        </Array>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
