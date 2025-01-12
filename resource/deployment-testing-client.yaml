@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: my-client-app
+      app: my-client
   template:
     metadata:
       labels:
-        app: my-client-app
+        app: my-client
     spec:
       containers:
         - name: my-client

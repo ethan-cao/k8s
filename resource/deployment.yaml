@@ -11,7 +11,7 @@ spec:
   replicas: 3
 
   selector:
-    # The Deployment will manage pods that have labels matching tpye: front-end
+    # this Deployment manages pods that have labels matching tpye: front-end
     matchLabels:
       type: front-end
 
