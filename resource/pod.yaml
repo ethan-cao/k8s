@@ -53,9 +53,10 @@ spec:
           cpu: 1000m
           memory: 256Mi # a container can use more memory than its limit, the pod could be terminiated if the node run out of memory
 
-      # container mounts a volumn to a directory inside container
+      # specifies where and how volumes should be mounted in the container
       volumeMounts:
-        - mountPath: /data
+        #  volume will be mounted at the /volume1 directory inside the container
+        - mountPath: /volume1
           # this is the name of the volumes to find the what this volumes is
           name: data-volume
 
@@ -69,9 +70,11 @@ spec:
 
   volumes:
     - name: data-volume
+      # Specifies that this is a hostPath volume type, which mounts a directory from the host node
       hostPath:
-        # any data created in this volumn is stored in the hosting node's /data directory
+        # path on the host node's filesystem that will be mounted
         path: /data
+        # path must be an existing directory
         type: Directory
 
   # pod-level securityContext

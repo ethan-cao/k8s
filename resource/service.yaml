@@ -24,8 +24,8 @@ apiVersion: v1
 kind: Service
 
 metadata:
-  name: nodeport-service
   namespace: default
+  name: nodeport-service
 
 spec:
   # map a port on the node to a port on a pod
@@ -35,7 +35,7 @@ spec:
     app: my-app
 
   ports:
-    # The port on which the service is exposed on each node of the cluster
+    # The port on which the service is exposed on each node in the cluster
     - nodePort: 30080
       # The port on which the service listens inside the cluster
       port: 80
