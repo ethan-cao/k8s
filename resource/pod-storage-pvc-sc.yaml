@@ -28,6 +28,10 @@ metadata:
   labels:
     name: myapp
 spec:
+  volumes:
+    - name: my-volume
+      persistentVolumeClaim:
+        claimName: my-pvc-1
   containers:
     - name: simple-pod
       image: busybox
@@ -38,7 +42,4 @@ spec:
       volumeMounts:
         - mountPath: "/tmp/log"
           name: my-volume
-  volumes:
-    - name: my-volume
-      persistentVolumeClaim:
-        claimName: my-pvc-1
+

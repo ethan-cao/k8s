@@ -34,6 +34,10 @@ metadata:
   labels:
     name: myapp
 spec:
+  volumes:
+    - name: my-volume-1
+      persistentVolumeClaim:
+        claimName: my-pvc-1
   containers:
     - name: pod-1
       image: busybox
@@ -45,7 +49,4 @@ spec:
         # mounts the volume test-volume to the path /mnt/volume inside the container.
         - mountPath: /mnt/volume
           name: my-volume-1
-  volumes:
-    - name: my-volume-1
-      persistentVolumeClaim:
-        claimName: my-pvc-1
+

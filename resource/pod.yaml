@@ -24,6 +24,15 @@ spec:
       image: busybox
       command: ["echo", "initial service; done;"]
 
+  volumes:
+    - name: data-volume
+      # Specifies that this is a hostPath volume type, which mounts a directory from the host node
+      hostPath:
+        # path on the host node's filesystem that will be mounted
+        path: /data
+        # path must be an existing directory
+        type: Directory
+
   containers:
     - name: alpine
       image: alpine
@@ -43,15 +52,16 @@ spec:
       # Resources are requested per container, not per Pod.
       # The total resources requested by the Pod is the sum of all resources requested by all containers in the Pod
       resources:
-        # minimum amount of a resource required,
+        # guaranteed minimum amount of a resource to be used by a container.
         # if requests not specfieid, but limits specified, requests is set as limits
         requests:
           cpu: 500m
           memory: 128Mi
-        # maximal amount of a resource required
+        # maximum amount of a resource to be used by a container
+        # best practice: DO NOT set limits, so that the container can use available resources of the node
         limits:
-          cpu: 1000m
-          memory: 256Mi # a container can use more memory than its limit, the pod could be terminiated if the node run out of memory
+          cpu: 1000m     # the container will suffer CPU throttle, if it uses more than 1000m CPU
+          memory: 256Mi  # the container will be OOM killed, if it uses more than 256Mi memory
 
       # specifies where and how volumes should be mounted in the container
       volumeMounts:
@@ -68,14 +78,6 @@ spec:
         capabilities:
           add: ["SYS_TIME"]
 
-  volumes:
-    - name: data-volume
-      # Specifies that this is a hostPath volume type, which mounts a directory from the host node
-      hostPath:
-        # path on the host node's filesystem that will be mounted
-        path: /data
-        # path must be an existing directory
-        type: Directory
 
   # pod-level securityContext
   securityContext:
