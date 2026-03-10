@@ -52,7 +52,7 @@ spec:
       # Resources are requested per container, not per Pod.
       # The total resources requested by the Pod is the sum of all resources requested by all containers in the Pod
       resources:
-        # guaranteed minimum amount of a resource to be used by a container.
+        # guaranteed minimal amount of a resource to be used by a container.
         # this does not mean the container uses at least the requested amount of resources
         # the actual usage can be anywhere from 0 to the limit
         # if requests not specfieid, but limits specified, requests is set as limits
@@ -79,6 +79,50 @@ spec:
         # capabilities is ONLY used in container level
         capabilities:
           add: ["SYS_TIME"]
+
+
+      # Container starts
+      #     ↓
+      # startupProbe (if defined)
+      #     ↓ (once passed)
+      # livenessProbe + readinessProbe (run in parallel)
+
+      # Purpose: Determines if the application inside the container has started successfully.
+      # Runs only once during container startup
+      # While running, it disables liveness and readiness probes
+      # If it fails (exceeds failureThreshold), the container is killed and restarted
+      # If it succeeds, it never runs again
+      startupProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        timeoutSeconds: 5
+        failureThreshold: 3
+      # Purpose: Determines if the container is still alive and healthy.
+      # Runs continuously throughout the container's lifecycle
+      # If it fails, the container is killed and restarted
+      livenessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        timeoutSeconds: 5
+        failureThreshold: 3
+      # Purpose: Determines if the container is ready to receive traffic.
+      # Runs continuously throughout the container's lifecycle
+      # If it fails, the pod is removed from Service endpoints (no traffic sent to it), but the container is NOT restarted
+      # If it succeeds, traffic resumes
+      readinessProbe:
+        httpGet:
+          path: /healthz
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 10
+        timeoutSeconds: 5
+        failureThreshold: 3
 
 
   # pod-level securityContext

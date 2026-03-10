@@ -7,7 +7,26 @@ parameters:
   type: gp2
 reclaimPolicy: Retain
 allowVolumeExpansion: true
+# volumeBindingMode controls when/how PV is bound to PVC
+# - Immediate: default, the PV is provisioned and bound to the PVC as soon as the PVC is created
+# - WaitForFirstConsumer: the binding and provisioning of PVs is delayed until a Pod using the PVC is scheduled
+volumeBindingMode: WaitForFirstConsumer
+
 ---
+
+apiVersion: storage.k8s.io/v1
+# Defines mutable performance attributes that can be changed 
+# on an already-provisioned volume without re-provisioning or data migration
+kind: VolumeAttributesClass
+metadata:
+  name: standard
+driverName: ebs.csi.aws.com
+parameters:
+  iops: "16000"
+  throughput: "1000"
+
+---
+
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -15,12 +34,16 @@ metadata:
 spec:
   # dynamically provison PV by SC
   storageClassName: my-sc
+  # use VolumeAttributesClass to set the volume attributes
+  volumeAttributesClassName: standard
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 100Mi
+
 ---
+
 apiVersion: v1
 kind: Pod
 metadata:
