@@ -9,7 +9,7 @@ reclaimPolicy: Retain
 allowVolumeExpansion: true
 # volumeBindingMode controls when/how PV is bound to PVC
 # - Immediate: default, the PV is provisioned and bound to the PVC as soon as the PVC is created
-# - WaitForFirstConsumer: the binding and provisioning of PVs is delayed until a Pod using the PVC is scheduled
+# - WaitForFirstConsumer: the binding/provisioning of PV is delayed until a Pod using the PVC is scheduled
 volumeBindingMode: WaitForFirstConsumer
 
 ---
