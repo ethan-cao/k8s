@@ -21,7 +21,7 @@ metadata:
   name: my-pvc-1
 spec:
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteOnce # the PVC can be mounted as a read-write volume by a single node
   resources:
     requests:
       # this PVC requests for at least 99 Mibibytes storage, the actual storage depends on the bound PV

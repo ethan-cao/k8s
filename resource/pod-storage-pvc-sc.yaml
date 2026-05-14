@@ -1,7 +1,7 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: my-sc
+  name: myStorageClass
 provisioner: kubernetes.io/aws-ebs
 parameters:
   type: gp2
@@ -19,7 +19,7 @@ apiVersion: storage.k8s.io/v1
 # on an already-provisioned volume without re-provisioning or data migration
 kind: VolumeAttributesClass
 metadata:
-  name: standard
+  name: myVolumeAttributesClass
 driverName: ebs.csi.aws.com
 parameters:
   iops: "16000"
@@ -30,12 +30,12 @@ parameters:
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: my-pvc-1
+  name: myPVC1
 spec:
   # dynamically provison PV by SC
-  storageClassName: my-sc
+  storageClassName: myStorageClass
   # use VolumeAttributesClass to set the volume attributes
-  volumeAttributesClassName: standard
+  volumeAttributesClassName: myVolumeAttributesClass
   accessModes:
     - ReadWriteOnce
   resources:
@@ -52,9 +52,23 @@ metadata:
     name: myapp
 spec:
   volumes:
-    - name: my-volume
+    - name: my-volume-1
       persistentVolumeClaim:
-        claimName: my-pvc-1
+        claimName: myPVC1
+    - name: my-volume-2
+      # volumeClaimTemplate: reference to a PVC template to be used for the volume
+      # the PVC will be created dynamically when the pod is created
+      ephemeral:
+        volumeClaimTemplate:
+          spec:
+            accessModes:
+              - ReadWriteOnce
+            resources:
+              requests:
+                storage: 1Gi
+            storageClassName: myStorageClass
+            volumeMode: Filesystem
+  # mounts the volume my-volume to the path /tmp/log inside the container
   containers:
     - name: simple-pod
       image: busybox
@@ -64,5 +78,7 @@ spec:
           cpu: "500m"
       volumeMounts:
         - mountPath: "/tmp/log"
-          name: my-volume
+          name: my-volume-1
+        - mountPath: "/tmp/log"
+          name: my-volume-2
 
